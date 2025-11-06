@@ -19,6 +19,11 @@ public class FProdutor {
     @Column (name = "endereco")
     private String endereco;
 
+    @Column (name = "cpf")
+    private String CPF;
+
+
+
     public String getId() {
         return id;
     }
@@ -43,12 +48,21 @@ public class FProdutor {
         this.endereco = endereco;
     }
 
+    public String getCPF() {
+        return CPF;
+    }
+
+    public void setCPF(String CPF) {
+        this.CPF = CPF;
+    }
+
     @Override
     public String toString() {
         return "FProdutor{" +
                 "id='" + id + '\'' +
                 ", nome='" + nome + '\'' +
                 ", endereco='" + endereco + '\'' +
+                ", CPF='" + CPF + '\'' +
                 '}';
     }
 }

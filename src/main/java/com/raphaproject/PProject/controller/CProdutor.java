@@ -4,6 +4,7 @@ import com.raphaproject.PProject.model.FProdutor;
 import com.raphaproject.PProject.repository.ProdutorRepository;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -40,6 +41,14 @@ public class CProdutor {
                                    @RequestBody FProdutor fProdutor){
         fProdutor.setId(id);
         produtorRepository.save(fProdutor);
+    }
+
+
+    @GetMapping
+    public List<FProdutor> findByCPF(@RequestParam("cpf") String cpf){
+
+        return produtorRepository.findByCPF(cpf);
+
     }
 
 }
